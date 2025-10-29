@@ -1,0 +1,265 @@
+# SAMPLE RESUMES FOR TESTING
+
+## ============================================
+## TEST 1: PERFECT CANDIDATE (Should score 90%+)
+## ============================================
+
+Sarah Chen
+Senior Data Scientist | AI/ML Expert
+
+PROFESSIONAL SUMMARY:
+Highly accomplished Senior Data Scientist with 7 years of experience building scalable machine learning solutions. Led cross-functional teams and delivered $5M+ in business value through data-driven insights.
+
+EXPERIENCE:
+
+Senior Data Scientist | TechCorp Inc. | 2020 - Present (4 years)
+• Led team of 8 data scientists in developing predictive models using Python, TensorFlow, and AWS
+• Built recommendation engine serving 10M+ users with 95% accuracy
+• Implemented MLOps pipeline reducing deployment time by 60%
+• Mentored junior team members and conducted technical interviews
+• Technologies: Python, Machine Learning, Deep Learning, SQL, AWS, Docker, Kubernetes
+
+Data Scientist | StartupAI | 2018 - 2020 (2 years)
+• Developed NLP models for sentiment analysis with 92% accuracy
+• Created automated data pipelines processing 1TB+ daily
+• Collaborated with product team to define ML requirements
+• Technologies: Python, Scikit-learn, SQL, Spark, AWS
+
+Junior Data Analyst | DataCorp | 2017 - 2018 (1 year)
+• Built dashboards and reports using SQL and Python
+• Performed exploratory data analysis for business insights
+• Technologies: Python, SQL, Tableau
+
+EDUCATION:
+Master of Science in Computer Science | Stanford University | 2017
+Bachelor of Science in Mathematics | UC Berkeley | 2015
+
+SKILLS:
+Technical: Python, Machine Learning, Deep Learning, SQL, AWS, Docker, Kubernetes, TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, Git
+Soft Skills: Team Leadership, Project Management, Communication
+
+ACHIEVEMENTS:
+• Published 5 research papers in top-tier ML conferences
+• Won "Best Innovation Award 2023" at TechCorp
+• Patent holder for novel ML algorithm
+• Speaker at AI Summit 2023
+• Kaggle Competition Master (Top 1%)
+
+CERTIFICATIONS:
+• AWS Certified Machine Learning - Specialty
+• Google Cloud Professional Data Engineer
+• Deep Learning Specialization (Coursera)
+
+---RESUME---
+
+## ============================================
+## TEST 2: GOOD CANDIDATE (Should score 75-85%)
+## ============================================
+
+Michael Rodriguez
+Data Scientist
+
+EXPERIENCE:
+Data Scientist at Analytics Corp (2021-2024) - 3 years
+• Developed machine learning models using Python and scikit-learn
+• Worked with SQL databases to extract and analyze data
+• Created visualizations and reports for stakeholders
+• Participated in agile development process
+
+Data Analyst at Business Solutions (2019-2021) - 2 years
+• Performed data analysis using Python and SQL
+• Built Excel dashboards for management reporting
+• Collaborated with business teams
+
+EDUCATION:
+Bachelor's in Computer Science, State University (2019)
+
+SKILLS:
+Python, Machine Learning, SQL, Pandas, NumPy, Matplotlib, Scikit-learn, Excel, Git
+
+ACHIEVEMENTS:
+• Improved model accuracy by 25%
+• Received "Employee of the Quarter" award
+
+---RESUME---
+
+## ============================================
+## TEST 3: JUNIOR CANDIDATE (Should score 50-65%)
+## ============================================
+
+Emma Williams
+Junior Data Analyst
+
+EXPERIENCE:
+Data Analyst Intern at SmallCo (2023-2024) - 1 year
+• Learned Python and SQL on the job
+• Assisted senior analysts with data cleaning
+• Created basic reports using Excel
+• Attended team meetings
+
+EDUCATION:
+Bachelor's in Business Administration, Local College (2023)
+Minor in Statistics
+
+SKILLS:
+Python (basic), SQL (basic), Excel, PowerPoint
+
+PROJECTS:
+• College capstone project analyzing sales data
+• Online course completion in Python basics
+
+---RESUME---
+
+## ============================================
+## TEST 4: RED FLAGS CANDIDATE (Should show warnings)
+## ============================================
+
+Alex Thompson
+Software Developer
+
+EXPERIENCE:
+Developer at Company A (Jan 2024 - Mar 2024) - 2 months
+Developer at Company B (Apr 2024 - May 2024) - 1 month
+Developer at Company C (Jun 2024 - Jul 2024) - 1 month
+Developer at Company D (Aug 2024 - Sep 2024) - 1 month
+Developer at Company E (Oct 2024 - Present) - 1 month
+
+Total Experience: 6 months across 5 companies
+
+EDUCATION:
+Computer Science degree (incomplete - dropout 2023)
+
+SKILLS:
+Python, Java, JavaScript, C++, Ruby, Go, Rust, PHP, Swift, Kotlin, React, Angular, Vue, Node.js, Django, Flask, Spring, Rails, AWS, Azure, GCP, Docker, Kubernetes, TensorFlow, PyTorch
+
+(Note: 23 skills claimed with only 6 months experience)
+
+---RESUME---
+
+## ============================================
+## TEST 5: SENIOR LEADERSHIP (Should score 85%+)
+## ============================================
+
+Dr. James Anderson
+VP of Data Science & AI
+
+PROFESSIONAL EXPERIENCE:
+
+VP of Data Science | Global TechCo | 2020 - Present (4 years)
+• Leading organization of 50+ data scientists and ML engineers
+• Established company-wide AI strategy and roadmap
+• Delivered $20M+ in annual cost savings through ML automation
+• Built and scaled ML platform serving 100M+ users
+• Hired and developed high-performing teams
+• Technologies: Python, TensorFlow, AWS, Kubernetes, MLOps
+
+Director of Machine Learning | Enterprise Solutions | 2017 - 2020 (3 years)
+• Managed team of 15 ML engineers
+• Built recommendation systems and fraud detection models
+• Implemented MLOps best practices
+• Technologies: Python, Spark, AWS, Docker
+
+Senior Data Scientist | Analytics Firm | 2015 - 2017 (2 years)
+• Led ML projects for Fortune 500 clients
+• Developed predictive models and NLP solutions
+• Technologies: Python, R, SQL, Hadoop
+
+EDUCATION:
+PhD in Computer Science (Machine Learning) | MIT | 2015
+MS in Computer Science | Carnegie Mellon University | 2012
+BS in Mathematics | Harvard University | 2010
+
+TECHNICAL EXPERTISE:
+Languages: Python, R, SQL, Scala, Java
+ML/AI: TensorFlow, PyTorch, Scikit-learn, XGBoost, Deep Learning, NLP, Computer Vision
+Cloud: AWS (SageMaker, EMR, S3), GCP, Azure
+Tools: Docker, Kubernetes, Airflow, MLflow, Git, Spark
+
+LEADERSHIP:
+• Built 3 data science teams from scratch (5 → 50 people)
+• Established ML engineering practices and standards
+• Mentored 20+ data scientists to senior roles
+• Regular speaker at industry conferences
+
+ACHIEVEMENTS:
+• Published 30+ research papers (5000+ citations)
+• 3 granted patents in ML algorithms
+• Keynote speaker at NeurIPS 2023
+• Advisory board member for AI startups
+• Won "AI Leader of the Year" award 2023
+
+---RESUME---
+
+## ============================================
+## TEST 6: CAREER CHANGER (Should score 40-55%)
+## ============================================
+
+Lisa Martinez
+Aspiring Data Scientist
+
+CURRENT ROLE:
+High School Math Teacher (2018 - Present) - 6 years
+• Teaching algebra and statistics to high school students
+• Using data to track student performance
+• Strong communication and presentation skills
+
+EDUCATION:
+Master's in Education | University of Texas | 2018
+Bachelor's in Mathematics | State College | 2016
+
+TRANSITIONING TO DATA SCIENCE:
+• Completed online courses:
+  - Python for Data Science (Coursera)
+  - SQL Basics (Udemy)
+  - Introduction to Machine Learning (edX)
+
+SKILLS:
+• Teaching: Mathematics, Statistics, Data Analysis
+• Basic Technical: Python (beginner), SQL (beginner), Excel (advanced)
+• Soft Skills: Communication, Presentation, Team Collaboration
+
+PROJECTS:
+• Personal project: Analyzed local weather data using Python
+• Created Excel dashboard for student grade tracking
+
+NOTES:
+• Highly motivated to transition into data science
+• Strong mathematical foundation
+• Excellent communication skills
+• Limited professional technical experience
+• No commercial ML project experience
+
+---RESUME---
+
+## ============================================
+## QUICK TEST PASTE (Multiple Resumes)
+## Copy everything below for bulk testing
+## ============================================
+
+Alice Brown
+5 years Python, SQL, Machine Learning
+Master's degree, Led team of 3, AWS certified
+
+---RESUME---
+
+Bob Wilson  
+2 years Python, SQL experience
+Bachelor's degree, No leadership
+
+---RESUME---
+
+Carol Davis
+8 years Python, ML, Deep Learning, SQL, AWS, Docker
+PhD, Published papers, Led team of 10
+
+---RESUME---
+
+David Miller
+1 year Python experience
+Bachelor's, Entry level, Learning ML
+
+---RESUME---
+
+Eve Taylor
+6 years Data Science, Python, SQL, ML, Cloud
+Master's, Team lead, Multiple certifications

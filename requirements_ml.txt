@@ -1,0 +1,46 @@
+# Core ML/DL Libraries for NeuroMatch AI
+# Install with: pip install -r requirements_ml.txt
+
+# Fix for Keras 3 compatibility
+tf-keras
+
+# Deep Learning & Transformers
+transformers==4.35.0
+torch==2.1.0
+sentence-transformers==2.2.2
+
+# Traditional ML
+scikit-learn==1.3.2
+xgboost==2.0.2
+lightgbm==4.1.0
+
+# NLP
+spacy==3.7.2
+nltk==3.8.1
+
+# Data Processing
+pandas==2.1.3
+numpy==1.26.2
+
+# Visualization
+plotly==5.18.0
+matplotlib==3.8.2
+seaborn==0.13.0
+
+# PDF Processing
+PyPDF2==3.0.1
+
+# Web Framework
+streamlit==1.28.2
+
+# Utilities
+python-dateutil==2.8.2
+regex==2023.10.3
+
+# Optional: Computer Vision (for future video analysis)
+# opencv-python==4.8.1
+# deepface==0.0.79
+
+# Optional: Speech Analysis (for future audio analysis)
+# librosa==0.10.1
+# speechbrain==0.5.16

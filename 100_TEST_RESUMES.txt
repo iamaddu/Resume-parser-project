@@ -1,0 +1,775 @@
+# 100 REALISTIC TEST RESUMES FOR BULK PROCESSING
+# Copy and paste this entire file into the bulk processing text area
+
+Sarah Chen
+Senior Data Scientist with 7 years experience
+Skills: Python, Machine Learning, SQL, AWS, TensorFlow, Docker
+Master's in Computer Science, Stanford University
+Led team of 8, published 5 papers
+
+---RESUME---
+
+Michael Rodriguez
+Data Scientist, 3 years experience
+Skills: Python, SQL, Scikit-learn, Pandas, NumPy
+Bachelor's in Computer Science
+Improved model accuracy by 25%
+
+---RESUME---
+
+Emma Williams
+Junior Data Analyst, 1 year experience
+Skills: Python, SQL, Excel, PowerPoint
+Bachelor's in Business Administration
+Completed capstone project on sales analysis
+
+---RESUME---
+
+Alex Thompson
+Software Developer, 6 months experience across 5 companies
+Skills: Python, Java, JavaScript, C++, Ruby, Go, Rust, PHP
+Computer Science degree incomplete
+
+---RESUME---
+
+Dr. James Anderson
+VP of Data Science, 12 years experience
+Skills: Python, R, TensorFlow, PyTorch, AWS, Kubernetes
+PhD in Computer Science, MIT
+Led teams of 50+, published 30 papers
+
+---RESUME---
+
+Lisa Martinez
+High School Math Teacher transitioning to data science
+6 years teaching experience
+Skills: Python (beginner), SQL (beginner), Excel (advanced)
+Master's in Education, completed online ML courses
+
+---RESUME---
+
+David Kim
+Data Engineer, 5 years experience
+Skills: Python, SQL, Spark, Airflow, AWS, Docker
+Bachelor's in Computer Engineering
+Built data pipelines processing 1TB+ daily
+
+---RESUME---
+
+Jennifer Lee
+Machine Learning Engineer, 4 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps
+Master's in AI, UC Berkeley
+Deployed models serving 10M+ users
+
+---RESUME---
+
+Robert Brown
+Business Analyst, 8 years experience
+Skills: SQL, Excel, Tableau, PowerBI, Python (basic)
+MBA from Harvard
+Strong business acumen, limited technical depth
+
+---RESUME---
+
+Maria Garcia
+Data Scientist, 2 years experience
+Skills: Python, R, SQL, Machine Learning, Statistics
+PhD in Statistics, Stanford
+Strong theoretical background
+
+---RESUME---
+
+John Smith
+Senior Software Engineer, 10 years experience
+Skills: Java, Python, Kubernetes, AWS, Microservices
+Bachelor's in Computer Science
+Led architecture for enterprise systems
+
+---RESUME---
+
+Amy Zhang
+Junior ML Engineer, 1.5 years experience
+Skills: Python, TensorFlow, Scikit-learn, Git
+Bachelor's in Mathematics
+Kaggle competition participant
+
+---RESUME---
+
+Carlos Mendez
+Data Analyst, 4 years experience
+Skills: SQL, Python, Tableau, Excel, Statistics
+Bachelor's in Economics
+Created dashboards for C-level executives
+
+---RESUME---
+
+Priya Patel
+Senior Data Scientist, 6 years experience
+Skills: Python, Machine Learning, Deep Learning, NLP, AWS
+Master's in Computer Science, IIT Delhi
+Published 3 research papers
+
+---RESUME---
+
+Kevin O'Brien
+DevOps Engineer, 5 years experience
+Skills: Docker, Kubernetes, AWS, Python, Terraform
+Bachelor's in IT
+Automated deployment pipelines
+
+---RESUME---
+
+Rachel Green
+Product Manager with technical background
+3 years PM experience, 2 years as Data Analyst
+Skills: SQL, Python, Product Strategy, Agile
+MBA, Bachelor's in Computer Science
+
+---RESUME---
+
+Tom Wilson
+Fresh Graduate, 0 years professional experience
+Skills: Python, Java, SQL, Machine Learning (coursework)
+Bachelor's in Computer Science, GPA 3.8
+Multiple internships and projects
+
+---RESUME---
+
+Nina Patel
+Data Scientist, 5 years experience
+Skills: Python, R, SQL, Machine Learning, Statistics, AWS
+PhD in Biostatistics
+Healthcare analytics specialist
+
+---RESUME---
+
+Marcus Johnson
+Senior Data Engineer, 8 years experience
+Skills: Python, Scala, Spark, Kafka, AWS, Airflow
+Master's in Computer Engineering
+Built real-time data platforms
+
+---RESUME---
+
+Sophia Anderson
+ML Research Scientist, 4 years experience
+Skills: Python, PyTorch, TensorFlow, Computer Vision, NLP
+PhD in AI, Carnegie Mellon
+Published 10+ papers in top conferences
+
+---RESUME---
+
+Daniel Lee
+Data Analyst, 2 years experience
+Skills: SQL, Python, Excel, Tableau, Statistics
+Bachelor's in Mathematics
+Strong analytical skills
+
+---RESUME---
+
+Olivia Martinez
+Senior BI Developer, 7 years experience
+Skills: SQL, PowerBI, Tableau, Python, ETL
+Bachelor's in Information Systems
+Built enterprise dashboards
+
+---RESUME---
+
+Ethan Brown
+Software Engineer transitioning to ML
+5 years software development, 1 year ML
+Skills: Python, Java, TensorFlow, Kubernetes
+Bachelor's in Computer Science
+
+---RESUME---
+
+Isabella Garcia
+Data Scientist, 3 years experience
+Skills: Python, Machine Learning, SQL, AWS, Docker
+Master's in Statistics
+Strong statistical modeling background
+
+---RESUME---
+
+William Chen
+Principal Data Scientist, 15 years experience
+Skills: Python, R, Machine Learning, Deep Learning, Leadership
+PhD in Computer Science
+Led data science organizations
+
+---RESUME---
+
+Ava Rodriguez
+Junior Data Engineer, 1 year experience
+Skills: Python, SQL, Airflow, AWS (basic)
+Bachelor's in Computer Science
+Built ETL pipelines
+
+---RESUME---
+
+James Wilson
+Data Scientist, 4 years experience
+Skills: Python, Machine Learning, SQL, Spark, AWS
+Master's in Data Science
+Fraud detection specialist
+
+---RESUME---
+
+Mia Johnson
+Senior Analyst, 6 years experience
+Skills: SQL, Python, R, Statistics, Tableau
+Master's in Applied Mathematics
+Financial analytics expert
+
+---RESUME---
+
+Benjamin Lee
+ML Engineer, 3 years experience
+Skills: Python, TensorFlow, Kubernetes, MLOps, AWS
+Bachelor's in Computer Engineering
+Deployed 20+ ML models to production
+
+---RESUME---
+
+Charlotte Kim
+Data Scientist, 5 years experience
+Skills: Python, Machine Learning, NLP, Deep Learning, AWS
+PhD in Computational Linguistics
+NLP specialist
+
+---RESUME---
+
+Lucas Martinez
+Senior Software Engineer, 9 years experience
+Skills: Python, Java, Kubernetes, AWS, Microservices
+Master's in Computer Science
+Backend systems architect
+
+---RESUME---
+
+Amelia Brown
+Data Analyst, 3 years experience
+Skills: SQL, Python, Excel, PowerBI, Statistics
+Bachelor's in Business Analytics
+Marketing analytics focus
+
+---RESUME---
+
+Henry Garcia
+Principal ML Engineer, 12 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, Leadership
+Master's in AI
+Built ML platforms from scratch
+
+---RESUME---
+
+Evelyn Chen
+Junior Data Scientist, 2 years experience
+Skills: Python, Machine Learning, SQL, Statistics
+Master's in Statistics
+Strong academic background
+
+---RESUME---
+
+Alexander Rodriguez
+Data Engineer, 6 years experience
+Skills: Python, Scala, Spark, Kafka, AWS, Airflow
+Bachelor's in Computer Science
+Real-time data processing expert
+
+---RESUME---
+
+Harper Wilson
+Senior Data Scientist, 8 years experience
+Skills: Python, Machine Learning, Deep Learning, NLP, Computer Vision
+PhD in AI, MIT
+Research and production experience
+
+---RESUME---
+
+Sebastian Lee
+Software Engineer, 4 years experience
+Skills: Python, Java, Docker, Kubernetes, AWS
+Bachelor's in Computer Engineering
+Full-stack development
+
+---RESUME---
+
+Ella Johnson
+Data Analyst, 2 years experience
+Skills: SQL, Python, Tableau, Excel
+Bachelor's in Economics
+Business intelligence focus
+
+---RESUME---
+
+Matthew Kim
+Senior ML Engineer, 7 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, AWS
+Master's in Computer Science
+Computer vision specialist
+
+---RESUME---
+
+Scarlett Martinez
+Data Scientist, 4 years experience
+Skills: Python, Machine Learning, SQL, AWS, Statistics
+Master's in Data Science
+Predictive modeling expert
+
+---RESUME---
+
+Jackson Brown
+Principal Data Engineer, 14 years experience
+Skills: Python, Scala, Spark, Kafka, AWS, Leadership
+Master's in Computer Engineering
+Data platform architect
+
+---RESUME---
+
+Victoria Garcia
+Junior ML Engineer, 1.5 years experience
+Skills: Python, TensorFlow, Scikit-learn, Docker
+Bachelor's in Computer Science
+NLP projects
+
+---RESUME---
+
+David Chen
+Data Scientist, 5 years experience
+Skills: Python, Machine Learning, Deep Learning, SQL, AWS
+PhD in Statistics
+Time series forecasting specialist
+
+---RESUME---
+
+Grace Rodriguez
+Senior Data Analyst, 6 years experience
+Skills: SQL, Python, R, Tableau, PowerBI, Statistics
+Master's in Applied Mathematics
+Healthcare analytics
+
+---RESUME---
+
+Samuel Wilson
+ML Research Engineer, 3 years experience
+Skills: Python, PyTorch, TensorFlow, Research
+PhD in AI (in progress)
+Published 5 papers
+
+---RESUME---
+
+Chloe Lee
+Data Engineer, 4 years experience
+Skills: Python, SQL, Airflow, Spark, AWS
+Bachelor's in Information Systems
+ETL and data warehousing
+
+---RESUME---
+
+Ryan Johnson
+Senior Software Engineer, 10 years experience
+Skills: Python, Java, Kubernetes, AWS, Microservices, Leadership
+Master's in Computer Science
+Technical lead
+
+---RESUME---
+
+Lily Kim
+Data Scientist, 3 years experience
+Skills: Python, Machine Learning, SQL, Statistics, AWS
+Master's in Statistics
+A/B testing specialist
+
+---RESUME---
+
+Nathan Martinez
+Principal ML Architect, 16 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, Leadership, Strategy
+PhD in AI
+Built ML organizations
+
+---RESUME---
+
+Zoe Brown
+Junior Data Analyst, 1 year experience
+Skills: SQL, Python, Excel, Tableau
+Bachelor's in Business Administration
+Entry-level analyst
+
+---RESUME---
+
+Isaac Garcia
+Data Engineer, 7 years experience
+Skills: Python, Scala, Spark, Kafka, AWS, Airflow, Leadership
+Master's in Computer Engineering
+Led data engineering teams
+
+---RESUME---
+
+Layla Chen
+Senior Data Scientist, 9 years experience
+Skills: Python, Machine Learning, Deep Learning, NLP, Computer Vision, AWS
+PhD in Computer Science
+Multi-domain expertise
+
+---RESUME---
+
+Gabriel Rodriguez
+ML Engineer, 4 years experience
+Skills: Python, TensorFlow, Kubernetes, MLOps, AWS
+Bachelor's in Computer Science
+Recommendation systems
+
+---RESUME---
+
+Penelope Wilson
+Data Analyst, 3 years experience
+Skills: SQL, Python, Tableau, Excel, Statistics
+Bachelor's in Mathematics
+Financial analytics
+
+---RESUME---
+
+Julian Lee
+Senior ML Engineer, 8 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, AWS, Leadership
+Master's in AI
+Computer vision and NLP
+
+---RESUME---
+
+Aria Johnson
+Data Scientist, 5 years experience
+Skills: Python, Machine Learning, SQL, AWS, Statistics
+Master's in Data Science
+Churn prediction specialist
+
+---RESUME---
+
+Wyatt Kim
+Principal Software Engineer, 13 years experience
+Skills: Python, Java, Kubernetes, AWS, Microservices, Leadership
+Master's in Computer Science
+System architect
+
+---RESUME---
+
+Nora Martinez
+Junior Data Scientist, 2 years experience
+Skills: Python, Machine Learning, SQL, Statistics
+Master's in Statistics
+Academic research background
+
+---RESUME---
+
+Leo Brown
+Data Engineer, 5 years experience
+Skills: Python, SQL, Spark, Airflow, AWS, Docker
+Bachelor's in Computer Engineering
+Data pipeline specialist
+
+---RESUME---
+
+Hazel Garcia
+Senior Data Scientist, 7 years experience
+Skills: Python, Machine Learning, Deep Learning, NLP, AWS
+PhD in Computational Linguistics
+NLP and text analytics
+
+---RESUME---
+
+Elijah Chen
+ML Engineer, 3 years experience
+Skills: Python, TensorFlow, Kubernetes, MLOps
+Bachelor's in Computer Science
+Model deployment focus
+
+---RESUME---
+
+Violet Rodriguez
+Data Analyst, 2 years experience
+Skills: SQL, Python, Tableau, Excel
+Bachelor's in Economics
+Marketing analytics
+
+---RESUME---
+
+Levi Wilson
+Senior ML Engineer, 6 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, AWS
+Master's in Computer Science
+Reinforcement learning
+
+---RESUME---
+
+Aurora Lee
+Data Scientist, 4 years experience
+Skills: Python, Machine Learning, SQL, AWS, Statistics
+Master's in Data Science
+Fraud detection
+
+---RESUME---
+
+Caleb Johnson
+Principal Data Engineer, 15 years experience
+Skills: Python, Scala, Spark, Kafka, AWS, Leadership, Strategy
+Master's in Computer Engineering
+Data platform leader
+
+---RESUME---
+
+Nova Kim
+Junior ML Engineer, 1.5 years experience
+Skills: Python, TensorFlow, Scikit-learn, Docker
+Bachelor's in Computer Science
+Computer vision projects
+
+---RESUME---
+
+Ezra Martinez
+Data Scientist, 5 years experience
+Skills: Python, Machine Learning, Deep Learning, SQL, AWS
+PhD in Statistics
+Bayesian modeling expert
+
+---RESUME---
+
+Luna Brown
+Senior Data Analyst, 6 years experience
+Skills: SQL, Python, R, Tableau, PowerBI, Statistics
+Master's in Applied Mathematics
+Product analytics
+
+---RESUME---
+
+Asher Garcia
+ML Research Scientist, 3 years experience
+Skills: Python, PyTorch, TensorFlow, Research
+PhD in AI
+Published 8 papers
+
+---RESUME---
+
+Stella Chen
+Data Engineer, 4 years experience
+Skills: Python, SQL, Airflow, Spark, AWS
+Bachelor's in Information Systems
+Real-time data processing
+
+---RESUME---
+
+Maverick Rodriguez
+Senior Software Engineer, 11 years experience
+Skills: Python, Java, Kubernetes, AWS, Microservices, Leadership
+Master's in Computer Science
+Engineering manager
+
+---RESUME---
+
+Ivy Wilson
+Data Scientist, 3 years experience
+Skills: Python, Machine Learning, SQL, Statistics, AWS
+Master's in Statistics
+Time series analysis
+
+---RESUME---
+
+Axel Lee
+Principal ML Architect, 17 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, Leadership, Strategy
+PhD in AI
+CTO-level experience
+
+---RESUME---
+
+Willow Johnson
+Junior Data Analyst, 1 year experience
+Skills: SQL, Python, Excel, Tableau
+Bachelor's in Business Administration
+Entry-level position
+
+---RESUME---
+
+Kai Kim
+Data Engineer, 8 years experience
+Skills: Python, Scala, Spark, Kafka, AWS, Airflow, Leadership
+Master's in Computer Engineering
+Data infrastructure lead
+
+---RESUME---
+
+Sage Martinez
+Senior Data Scientist, 10 years experience
+Skills: Python, Machine Learning, Deep Learning, NLP, Computer Vision, AWS, Leadership
+PhD in Computer Science
+Research and production
+
+---RESUME---
+
+River Brown
+ML Engineer, 4 years experience
+Skills: Python, TensorFlow, Kubernetes, MLOps, AWS
+Bachelor's in Computer Science
+MLOps specialist
+
+---RESUME---
+
+Phoenix Garcia
+Data Analyst, 3 years experience
+Skills: SQL, Python, Tableau, Excel, Statistics
+Bachelor's in Mathematics
+Business intelligence
+
+---RESUME---
+
+Atlas Chen
+Senior ML Engineer, 9 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, AWS, Leadership
+Master's in AI
+NLP and computer vision
+
+---RESUME---
+
+Jade Rodriguez
+Data Scientist, 5 years experience
+Skills: Python, Machine Learning, SQL, AWS, Statistics
+Master's in Data Science
+Recommendation systems
+
+---RESUME---
+
+Orion Wilson
+Principal Software Engineer, 14 years experience
+Skills: Python, Java, Kubernetes, AWS, Microservices, Leadership
+Master's in Computer Science
+Distinguished engineer
+
+---RESUME---
+
+Ember Lee
+Junior Data Scientist, 2 years experience
+Skills: Python, Machine Learning, SQL, Statistics
+Master's in Statistics
+Strong math background
+
+---RESUME---
+
+Jasper Johnson
+Data Engineer, 6 years experience
+Skills: Python, SQL, Spark, Airflow, AWS, Docker
+Bachelor's in Computer Engineering
+Streaming data expert
+
+---RESUME---
+
+Skye Kim
+Senior Data Scientist, 8 years experience
+Skills: Python, Machine Learning, Deep Learning, NLP, AWS
+PhD in Computational Linguistics
+Language models specialist
+
+---RESUME---
+
+Felix Martinez
+ML Engineer, 3 years experience
+Skills: Python, TensorFlow, Kubernetes, MLOps
+Bachelor's in Computer Science
+Model serving infrastructure
+
+---RESUME---
+
+Iris Brown
+Data Analyst, 2 years experience
+Skills: SQL, Python, Tableau, Excel
+Bachelor's in Economics
+Customer analytics
+
+---RESUME---
+
+Jude Garcia
+Senior ML Engineer, 7 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, AWS
+Master's in Computer Science
+Computer vision systems
+
+---RESUME---
+
+Raven Chen
+Data Scientist, 4 years experience
+Skills: Python, Machine Learning, SQL, AWS, Statistics
+Master's in Data Science
+Anomaly detection
+
+---RESUME---
+
+Silas Rodriguez
+Principal Data Engineer, 16 years experience
+Skills: Python, Scala, Spark, Kafka, AWS, Leadership, Strategy
+Master's in Computer Engineering
+VP of Data Engineering
+
+---RESUME---
+
+Wren Wilson
+Junior ML Engineer, 1.5 years experience
+Skills: Python, TensorFlow, Scikit-learn, Docker
+Bachelor's in Computer Science
+NLP enthusiast
+
+---RESUME---
+
+Theo Lee
+Data Scientist, 5 years experience
+Skills: Python, Machine Learning, Deep Learning, SQL, AWS
+PhD in Statistics
+Causal inference expert
+
+---RESUME---
+
+Dahlia Johnson
+Senior Data Analyst, 6 years experience
+Skills: SQL, Python, R, Tableau, PowerBI, Statistics
+Master's in Applied Mathematics
+Growth analytics
+
+---RESUME---
+
+Knox Kim
+ML Research Scientist, 3 years experience
+Skills: Python, PyTorch, TensorFlow, Research
+PhD in AI
+Published 12 papers
+
+---RESUME---
+
+Briar Martinez
+Data Engineer, 4 years experience
+Skills: Python, SQL, Airflow, Spark, AWS
+Bachelor's in Information Systems
+Data quality specialist
+
+---RESUME---
+
+Rowan Brown
+Senior Software Engineer, 12 years experience
+Skills: Python, Java, Kubernetes, AWS, Microservices, Leadership
+Master's in Computer Science
+Staff engineer
+
+---RESUME---
+
+Marlowe Garcia
+Data Scientist, 3 years experience
+Skills: Python, Machine Learning, SQL, Statistics, AWS
+Master's in Statistics
+Experimentation platform
+
+---RESUME---
+
+Bodhi Chen
+Principal ML Architect, 18 years experience
+Skills: Python, TensorFlow, PyTorch, Kubernetes, MLOps, Leadership, Strategy
+PhD in AI
+Chief AI Officer level
