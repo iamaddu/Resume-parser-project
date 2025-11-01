@@ -224,23 +224,44 @@ st.markdown("""
     /* FIXED SIDEBAR STYLING - ENSURES VISIBILITY */
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 100%) !important;
-        border-right: 1px solid rgba(0, 245, 212, 0.3) !important;
+        border-right: 3px solid rgba(0, 245, 212, 0.5) !important;
+        min-width: 300px !important;
+        width: 300px !important;
+    }
+    
+    section[data-testid="stSidebar"] > div {
+        background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 100%) !important;
     }
     
     section[data-testid="stSidebar"] * {
         color: #ffffff !important;
     }
     
-    section[data-testid="stSidebar"] .stSelectbox > div > div {
-        background: rgba(255, 255, 255, 0.1) !important;
-        border: 1px solid rgba(0, 245, 212, 0.3) !important;
+    section[data-testid="stSidebar"] .stRadio > label {
+        color: #00f5d4 !important;
+        font-size: 1.1rem !important;
+        font-weight: 600 !important;
+    }
+    
+    section[data-testid="stSidebar"] .stRadio > div {
+        background: rgba(0, 0, 0, 0.3) !important;
+        padding: 1rem !important;
         border-radius: 10px !important;
-        color: #ffffff !important;
     }
     
     /* Sidebar navigation styling */
     .sidebar .sidebar-content {
         background: transparent !important;
+    }
+    
+    /* Force sidebar to be visible */
+    [data-testid="stSidebar"][aria-expanded="true"] {
+        min-width: 300px !important;
+    }
+    
+    [data-testid="stSidebar"][aria-expanded="false"] {
+        min-width: 300px !important;
+        margin-left: 0px !important;
     }
     
     /* Text inputs */
@@ -402,19 +423,19 @@ def detect_red_flags(text, resume_data):
     # Job hopping detection
     job_count = text.lower().count('company') + text.lower().count('worked at') + text.lower().count('employer')
     if job_count > 4 and resume_data['experience'] < 3:
-        red_flags.append("🔴 Job Hopping: Multiple jobs in short timeframe")
+        red_flags.append(" Job Hopping: Multiple jobs in short timeframe")
     
     # Employment gap detection
     if 'gap' in text.lower() or '(unemployed)' in text.lower():
-        warnings.append("🟡 Employment Gap: Unexplained period detected")
+        warnings.append(" Employment Gap: Unexplained period detected")
     
     # Skill exaggeration
     if resume_data['experience'] < 2 and len(resume_data['skills']) > 10:
-        warnings.append("🟡 Skill Inflation: Many skills for experience level")
+        warnings.append(" Skill Inflation: Many skills for experience level")
     
     # Education mismatch
     if 'dropout' in text.lower() or 'incomplete' in text.lower():
-        warnings.append("🟡 Education Status: Incomplete degree program")
+        warnings.append(" Education Status: Incomplete degree program")
     
     return {
         'red_flags': red_flags,
@@ -428,23 +449,23 @@ def generate_interview_questions(resume_data, text):
     
     # Experience-based questions
     if resume_data['experience'] > 0:
-        questions.append(f"📝 Tell me about your {resume_data['experience']} years of experience and your most challenging project")
+        questions.append(f"Tell me about your {resume_data['experience']} years of experience and your most challenging project")
     
     # Skill-based questions
     for skill in resume_data['skills'][:3]:  # Top 3 skills
-        questions.append(f"💻 Describe a complex problem you solved using {skill.title()}")
+        questions.append(f" Describe a complex problem you solved using {skill.title()}")
     
     # Leadership questions
     if resume_data['leadership_indicators']:
-        questions.append("👥 Describe a situation where you had to lead a team through a difficult challenge")
+        questions.append(" Describe a situation where you had to lead a team through a difficult challenge")
     
     # Achievement questions
     if resume_data['achievements']:
-        questions.append("🏆 Walk me through your biggest professional achievement and its impact")
+        questions.append(" Walk me through your biggest professional achievement and its impact")
     
     # Behavioral questions
-    questions.append("🤔 How do you handle tight deadlines and multiple priorities?")
-    questions.append("🔄 Describe a time you had to learn a new technology quickly")
+    questions.append(" How do you handle tight deadlines and multiple priorities?")
+    questions.append(" Describe a time you had to learn a new technology quickly")
     
     return questions[:8]  # Return top 8 questions
 
@@ -498,8 +519,8 @@ def predict_salary_range(resume_data):
     market_average = base_salary
     
     return {
-        'lower': lower_bound,
-        'upper': upper_bound,
+        'lower_range': lower_bound,
+        'upper_range': upper_bound,
         'market_average': market_average,
         'recommended_offer': int(market_average * 0.97)  # Slightly below market
     }
@@ -507,7 +528,7 @@ def predict_salary_range(resume_data):
 def generate_email_template(candidate_name, status, score, job_title, reasons):
     """Generate personalized email template"""
     templates = {
-        'NEURAL SELECTED': f"""Subject: 🎉 Interview Invitation - {job_title}
+        'NEURAL SELECTED': f"""Subject:  Interview Invitation - {job_title}
 
 Dear {candidate_name},
 
@@ -528,7 +549,7 @@ We're excited to learn more about you!
 Best regards,
 Neural Recruitment Team""",
 
-        'CYBER SHORTLISTED': f"""Subject: 📋 Application Update - {job_title}
+        'CYBER SHORTLISTED': f"""Subject:  Application Update - {job_title}
 
 Dear {candidate_name},
 
@@ -558,7 +579,7 @@ After careful review, we've decided to move forward with candidates whose experi
 However, we were impressed by:
 {chr(10).join(f'✓ {reason}' for reason in reasons[:2]) if reasons else '✓ Your professional background'}
 
-💡 To strengthen future applications:
+To strengthen future applications:
 • Consider gaining experience in [Key Skill Areas]
 • Highlight quantifiable achievements
 • Emphasize relevant project outcomes
@@ -617,16 +638,16 @@ def calculate_professional_match_score(resume_data, job_requirements):
     reasons_rejected = []
     
     if scores['technical_skills'] > 0.7:
-        reasons_selected.append("🔥 Superior technical capabilities detected")
+        reasons_selected.append(" Superior technical capabilities detected")
     if scores['experience'] > 0.8:
-        reasons_selected.append("⚡ Advanced experience matrix")
+        reasons_selected.append(" Advanced experience matrix")
     if scores['leadership'] > 0.7:
-        reasons_selected.append("👑 Leadership protocols activated")
+        reasons_selected.append(" Leadership protocols activated")
     
     if scores['technical_skills'] < 0.5:
-        reasons_rejected.append("⚠️ Technical skills below threshold")
+        reasons_rejected.append(" Technical skills below threshold")
     if scores['experience'] < 0.5:
-        reasons_rejected.append("📊 Experience data insufficient")
+        reasons_rejected.append(" Experience data insufficient")
     
     return {
         'overall_score': final_score,
@@ -854,7 +875,7 @@ def show_single_resume():
         )
         
         if uploaded_file:
-            st.success(f"✅ File uploaded: {uploaded_file.name} ({uploaded_file.size / 1024:.1f} KB)")
+            st.success(f"File uploaded: {uploaded_file.name} ({uploaded_file.size / 1024:.1f} KB)")
             
             # Extract text from PDF
             with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
@@ -864,12 +885,12 @@ def show_single_resume():
             try:
                 resume_text = extract_text_from_pdf(tmp_path)
                 if resume_text.strip():
-                    with st.expander("📄 View Extracted Text"):
+                    with st.expander(" View Extracted Text"):
                         st.text_area("Extracted resume text:", resume_text, height=200)
                 else:
-                    st.error("❌ Could not extract text from PDF. Please try pasting text instead.")
+                    st.error(" Could not extract text from PDF. Please try pasting text instead.")
             except Exception as e:
-                st.error(f"❌ Error processing PDF: {str(e)}")
+                st.error(f" Error processing PDF: {str(e)}")
             finally:
                 try:
                     os.unlink(tmp_path)
@@ -947,7 +968,7 @@ def show_single_resume():
                 red_flag_analysis = detect_red_flags(resume_text, resume_data)
                 
                 if red_flag_analysis['clean']:
-                    st.success("✅ No red flags detected - Clean profile")
+                    st.success("No red flags detected - Clean profile")
                 else:
                     if red_flag_analysis['red_flags']:
                         for flag in red_flag_analysis['red_flags']:
@@ -962,7 +983,7 @@ def show_single_resume():
                 
                 col1, col2 = st.columns(2)
                 with col1:
-                    st.markdown("**✅ Skills Matched:**")
+                    st.markdown("** Skills Matched:**")
                     if skills_gap['has']:
                         for skill in skills_gap['has']:
                             st.success(f"✓ {skill.title()}")
@@ -970,17 +991,17 @@ def show_single_resume():
                         st.info("No exact matches found")
                 
                 with col2:
-                    st.markdown("**❌ Skills Missing:**")
+                    st.markdown("** Skills Missing:**")
                     if skills_gap['missing']:
                         for skill in skills_gap['missing']:
                             st.error(f"✗ {skill.title()}")
                     else:
                         st.success("All required skills present!")
                 
-                st.info(f"📚 Estimated learning time for missing skills: **{skills_gap['learning_time_weeks']} weeks**")
+                st.info(f" Estimated learning time for missing skills: **{skills_gap['learning_time_weeks']} weeks**")
                 
                 if skills_gap['ready_to_interview']:
-                    st.success("🎯 Candidate is ready to interview despite minor gaps!")
+                    st.success(" Candidate is ready to interview despite minor gaps!")
                 
                 # 3. Salary Range Prediction
                 st.markdown("### Compensation Analysis")
@@ -988,11 +1009,11 @@ def show_single_resume():
                 
                 col1, col2, col3, col4 = st.columns(4)
                 with col1:
-                    st.metric("💵 Lower Range", f"${salary_pred['lower']:,}")
+                    st.metric("Lower Range", f"${salary_pred['lower_range']:,}")
                 with col2:
-                    st.metric("📊 Market Average", f"${salary_pred['market_average']:,}")
+                    st.metric("Market Average", f"${salary_pred['market_average']:,}")
                 with col3:
-                    st.metric("💎 Upper Range", f"${salary_pred['upper']:,}")
+                    st.metric(" Upper Range", f"${salary_pred['upper_range']:,}")
                 with col4:
                     st.metric("Recommended", f"${salary_pred['recommended_offer']:,}")
                 
@@ -1016,10 +1037,10 @@ def show_single_resume():
                     result['reasons_selected'] if result['reasons_selected'] else ["Professional background"]
                 )
                 
-                with st.expander("📨 View/Copy Email Template"):
+                with st.expander(" View/Copy Email Template"):
                     st.code(email_template, language="text")
                     st.download_button(
-                        label="📥 Download Email Template",
+                        label="Download Email Template",
                         data=email_template,
                         file_name=f"email_{result['candidate_name'].replace(' ', '_')}.txt",
                         mime="text/plain"
@@ -1046,17 +1067,17 @@ def show_bulk_analysis():
     st.markdown("---")
     
     # Input method selection
-    st.markdown("#### 📥 SELECT INPUT METHOD")
+    st.markdown("####  SELECT INPUT METHOD")
     input_method = st.radio(
         "Choose how to submit resumes:",
-        ["📄 Upload PDF Files", "📝 Paste Text (Multiple Resumes)", "💼 Mixed Input"],
+        [" Upload PDF Files", " Paste Text (Multiple Resumes)", "💼 Mixed Input"],
         horizontal=True
     )
     
     resumes_list = []
     
-    if input_method == "📄 Upload PDF Files":
-        st.markdown("##### 🚀 PDF UPLOAD INTERFACE")
+    if input_method == " Upload PDF Files":
+        st.markdown("#####  PDF UPLOAD INTERFACE")
         uploaded_files = st.file_uploader(
             "Upload multiple resume PDFs:",
             type=['pdf'],
@@ -1065,16 +1086,16 @@ def show_bulk_analysis():
         )
         
         if uploaded_files:
-            st.success(f"✅ {len(uploaded_files)} PDF files uploaded successfully!")
+            st.success(f" {len(uploaded_files)} PDF files uploaded successfully!")
             
             # Preview uploaded files
-            with st.expander("📋 View Uploaded Files"):
+            with st.expander(" View Uploaded Files"):
                 for i, file in enumerate(uploaded_files, 1):
                     st.write(f"{i}. {file.name} ({file.size / 1024:.1f} KB)")
             
             # Extract text from PDFs
-            if st.button("🔬 EXTRACT & PROCESS PDFs", type="primary"):
-                with st.spinner("🔄 Extracting neural data from PDFs..."):
+            if st.button("EXTRACT & PROCESS PDFs", type="primary"):
+                with st.spinner("Extracting data from PDFs..."):
                     for uploaded_file in uploaded_files:
                         # Save to temp file
                         with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
@@ -1087,9 +1108,9 @@ def show_bulk_analysis():
                             if resume_text.strip():
                                 resumes_list.append(resume_text)
                             else:
-                                st.warning(f"⚠️ Could not extract text from {uploaded_file.name}")
+                                st.warning(f" Could not extract text from {uploaded_file.name}")
                         except Exception as e:
-                            st.error(f"❌ Error processing {uploaded_file.name}: {str(e)}")
+                            st.error(f" Error processing {uploaded_file.name}: {str(e)}")
                         finally:
                             # Clean up temp file
                             try:
@@ -1098,10 +1119,10 @@ def show_bulk_analysis():
                                 pass
                     
                     if resumes_list:
-                        st.success(f"🎯 Successfully extracted {len(resumes_list)} resume profiles!")
+                        st.success(f"Successfully extracted {len(resumes_list)} resume profiles!")
     
-    elif input_method == "📝 Paste Text (Multiple Resumes)":
-        st.markdown("##### 📝 TEXT INPUT INTERFACE")
+    elif input_method == " Paste Text (Multiple Resumes)":
+        st.markdown("#####  TEXT INPUT INTERFACE")
         st.info("🔬 Separate each neural profile with '---RESUME---' delimiter")
         bulk_text = st.text_area(
             "BULK NEURAL DATA INPUT:",
@@ -1117,16 +1138,16 @@ Neural Profile 2 data matrix...
 Neural Profile 3 data matrix..."""
         )
         
-        if bulk_text and st.button("🔬 PROCESS TEXT INPUT", type="primary"):
+        if bulk_text and st.button("PROCESS TEXT INPUT", type="primary"):
             resumes_list = [r.strip() for r in bulk_text.split("---RESUME---") if r.strip()]
             if resumes_list:
-                st.success(f"🎯 {len(resumes_list)} resume profiles detected!")
+                st.success(f"{len(resumes_list)} resume profiles detected!")
     
     else:  # Mixed Input
         st.markdown("##### 💼 MIXED INPUT INTERFACE")
         
         # PDF Upload
-        st.markdown("**📄 Upload PDFs:**")
+        st.markdown("** Upload PDFs:**")
         uploaded_files = st.file_uploader(
             "Upload PDF resumes:",
             type=['pdf'],
@@ -1134,15 +1155,15 @@ Neural Profile 3 data matrix..."""
         )
         
         # Text Input
-        st.markdown("**📝 Or Paste Text:**")
+        st.markdown("** Or Paste Text:**")
         bulk_text = st.text_area(
             "Additional resumes (separate with ---RESUME---):",
             height=200,
             placeholder="Paste additional resume text here..."
         )
         
-        if st.button("🔬 PROCESS ALL INPUTS", type="primary"):
-            with st.spinner("🔄 Processing mixed inputs..."):
+        if st.button("PROCESS ALL INPUTS", type="primary"):
+            with st.spinner("Processing mixed inputs..."):
                 # Process PDFs
                 if uploaded_files:
                     for uploaded_file in uploaded_files:
@@ -1168,7 +1189,7 @@ Neural Profile 3 data matrix..."""
                     resumes_list.extend(text_resumes)
                 
                 if resumes_list:
-                    st.success(f"🎯 Total {len(resumes_list)} resume profiles ready for analysis!")
+                    st.success(f"Total {len(resumes_list)} resume profiles ready for analysis!")
     
     # Process resumes if available
     if resumes_list and len(resumes_list) > 0:
@@ -1184,7 +1205,7 @@ Neural Profile 3 data matrix..."""
         status_text = st.empty()
         
         for i, resume_text in enumerate(resumes_list):
-            status_text.text(f"🔄 Processing neural profile {i+1}/{len(resumes_list)}...")
+            status_text.text(f"Processing resume {i+1}/{len(resumes_list)}...")
             resume_data = parse_resume_professional(resume_text)
             result = calculate_professional_match_score(resume_data, job_requirements)
             
@@ -1199,30 +1220,103 @@ Neural Profile 3 data matrix..."""
             
             progress_bar.progress((i + 1) / len(resumes_list))
         
-        status_text.text("✅ Quantum processing complete!")
+        status_text.text("Processing complete!")
         
         # Sort by score
         results.sort(key=lambda x: x['match_score'], reverse=True)
         
-        # Display results
-        st.markdown("### 📊 NEURAL ANALYSIS RESULTS")
+        # STORE IN SESSION STATE SO FILTERS WORK
+        st.session_state.results = results
+        st.session_state.resumes_list = resumes_list
+        st.session_state.job_requirements = job_requirements
+    
+    # Now process results (whether new or from session state)
+    if 'results' in st.session_state:
+        results = st.session_state.results
+        resumes_list = st.session_state.resumes_list
+        job_requirements = st.session_state.job_requirements
         
+        # Calculate candidate groups
         selected = [r for r in results if r['match_score'] >= 0.8]
         shortlisted = [r for r in results if 0.65 <= r['match_score'] < 0.8]
+        under_review = [r for r in results if 0.45 <= r['match_score'] < 0.65]
+        rejected = [r for r in results if r['match_score'] < 0.45]
         
+        # Calculate hidden gems
+        hidden_gems_list = []
+        exact_match_list = []
+        high_experience = [r for r in results if r['experience'] >= 7]
+        fresh_talent = [r for r in results if r['experience'] <= 2]
+        
+        for i, candidate in enumerate(results):
+            resume_text = resumes_list[i] if i < len(resumes_list) else ""
+            if resume_text:
+                resume_data = parse_resume_professional(resume_text)
+                exact_matches = sum(1 for skill in job_requirements['skills'] 
+                                  if any(skill in s.lower() for s in resume_data['skills']))
+                exact_match_pct = exact_matches / len(job_requirements['skills']) if job_requirements['skills'] else 0
+                
+                if candidate['match_score'] > exact_match_pct and (candidate['match_score'] - exact_match_pct) >= 0.20 and candidate['match_score'] >= 0.60:
+                    hidden_gems_list.append(candidate)
+                elif exact_match_pct >= 0.8:
+                    exact_match_list.append(candidate)
+        
+        # QUICK FILTER SECTIONS
+        st.markdown("### QUICK FILTERS - Click to Jump to Section")
+        st.markdown("---")
+        
+        # Create clickable filter buttons in a grid
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            if st.button(f" NEURAL SELECTED ({len(selected)})", width="stretch", type="primary"):
+                st.session_state.filter_view = "selected"
+            if st.button(f" HIDDEN GEMS ({len(hidden_gems_list)})", width="stretch"):
+                st.session_state.filter_view = "hidden_gems"
+        
+        with col2:
+            if st.button(f" SHORTLISTED ({len(shortlisted)})", width="stretch"):
+                st.session_state.filter_view = "shortlisted"
+            if st.button(f" EXACT MATCH ({len(exact_match_list)})", width="stretch"):
+                st.session_state.filter_view = "exact_match"
+        
+        with col3:
+            if st.button(f" UNDER REVIEW ({len(under_review)})", width="stretch"):
+                st.session_state.filter_view = "under_review"
+            if st.button(f" HIGH EXPERIENCE ({len(high_experience)})", width="stretch"):
+                st.session_state.filter_view = "high_experience"
+        
+        with col4:
+            if st.button(f" REJECTED ({len(rejected)})", width="stretch"):
+                st.session_state.filter_view = "rejected"
+            if st.button(f" FRESH TALENT ({len(fresh_talent)})", width="stretch"):
+                st.session_state.filter_view = "fresh_talent"
+        
+        # Reset filter button
+        if st.button(" SHOW ALL CANDIDATES", width="stretch"):
+            st.session_state.filter_view = "all"
+        
+        st.markdown("---")
+        
+        # Display results based on filter
+        current_filter = st.session_state.get('filter_view', 'all')
+        
+        # KPI Metrics
+        st.markdown("###  NEURAL ANALYSIS RESULTS")
         col1, col2, col3, col4 = st.columns(4)
         with col1:
-            st.metric("🧬 TOTAL PROFILES", len(results))
+            st.metric(" TOTAL PROFILES", len(results))
         with col2:
-            st.metric("⚡ NEURAL SELECTED", len(selected))
+            st.metric(" NEURAL SELECTED", len(selected))
         with col3:
-            st.metric("🔥 CYBER SHORTLISTED", len(shortlisted))
+            st.metric(" CYBER SHORTLISTED", len(shortlisted))
         with col4:
-            st.metric("📈 SUCCESS RATE", f"{len(selected)/len(results)*100:.1f}%")
+            st.metric(" SUCCESS RATE", f"{len(selected)/len(results)*100:.1f}%")
         
-        # Show top candidates
-        if selected:
-            st.markdown("### NEURAL SELECTED CANDIDATES")
+        # Display filtered candidates based on selection
+        if current_filter == "selected" and selected:
+            st.markdown("###  NEURAL SELECTED CANDIDATES")
+            st.info(f"Showing {len(selected)} candidates with 80%+ match score")
             for candidate in selected:
                 st.markdown(f"""
                 <div class="cyber-badge-selected">
@@ -1231,20 +1325,438 @@ Neural Profile 3 data matrix..."""
                 """, unsafe_allow_html=True)
                 st.markdown("<br>", unsafe_allow_html=True)
         
-        if shortlisted:
-            st.markdown("### CYBER SHORTLISTED CANDIDATES")
+        elif current_filter == "shortlisted" and shortlisted:
+            st.markdown("###  CYBER SHORTLISTED CANDIDATES")
+            st.info(f"Showing {len(shortlisted)} candidates with 65-79% match score")
             for candidate in shortlisted:
                 st.markdown(f"""
                 <div class="cyber-badge-shortlisted">
-                    ⚡ {candidate['candidate']} - {candidate['match_score']:.1%} compatibility - {candidate['decision']}
+                     {candidate['candidate']} - {candidate['match_score']:.1%} compatibility - {candidate['decision']}
                 </div>
                 """, unsafe_allow_html=True)
                 st.markdown("<br>", unsafe_allow_html=True)
         
+        elif current_filter == "under_review" and under_review:
+            st.markdown("###  UNDER REVIEW CANDIDATES")
+            st.info(f"Showing {len(under_review)} candidates with 45-64% match score")
+            for candidate in under_review:
+                st.markdown(f"""
+                <div style="background: linear-gradient(45deg, #ffd60a, #ff9e00); color: #000; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem; font-weight: 700;">
+                     {candidate['candidate']} - {candidate['match_score']:.1%} compatibility - {candidate['decision']}
+                </div>
+                """, unsafe_allow_html=True)
+        
+        elif current_filter == "rejected" and rejected:
+            st.markdown("###  REJECTED CANDIDATES")
+            st.warning(f"Showing {len(rejected)} candidates with <45% match score")
+            for candidate in rejected:
+                st.markdown(f"""
+                <div style="background: linear-gradient(45deg, #ff006e, #d00000); color: #fff; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem; font-weight: 700;">
+                     {candidate['candidate']} - {candidate['match_score']:.1%} compatibility - {candidate['decision']}
+                </div>
+                """, unsafe_allow_html=True)
+        
+        elif current_filter == "hidden_gems" and hidden_gems_list:
+            st.markdown("### HIDDEN GEMS - AI-Discovered Talent")
+            st.success(f"Showing {len(hidden_gems_list)} candidates discovered by ML/DL (missed by exact matching)")
+            for candidate in hidden_gems_list:
+                st.markdown(f"""
+                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: #fff; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem; font-weight: 700; border-left: 5px solid #FFD700;">
+                     {candidate['candidate']} - {candidate['match_score']:.1%} compatibility - HIDDEN GEM
+                </div>
+                """, unsafe_allow_html=True)
+        
+        elif current_filter == "exact_match" and exact_match_list:
+            st.markdown("### EXACT MATCH CANDIDATES")
+            st.success(f"Showing {len(exact_match_list)} candidates with 80%+ exact keyword match")
+            for candidate in exact_match_list:
+                st.markdown(f"""
+                <div style="background: linear-gradient(45deg, #06ffa5, #00d4aa); color: #000; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem; font-weight: 700;">
+                     {candidate['candidate']} - {candidate['match_score']:.1%} compatibility - EXACT MATCH
+                </div>
+                """, unsafe_allow_html=True)
+        
+        elif current_filter == "high_experience" and high_experience:
+            st.markdown("### HIGH EXPERIENCE CANDIDATES")
+            st.info(f"Showing {len(high_experience)} candidates with 7+ years experience")
+            for candidate in high_experience:
+                st.markdown(f"""
+                <div style="background: linear-gradient(45deg, #4361ee, #3a0ca3); color: #fff; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem; font-weight: 700;">
+                     {candidate['candidate']} - {candidate['experience']} years - {candidate['match_score']:.1%} match
+                </div>
+                """, unsafe_allow_html=True)
+        
+        elif current_filter == "fresh_talent" and fresh_talent:
+            st.markdown("###  FRESH TALENT")
+            st.info(f"Showing {len(fresh_talent)} candidates with 0-2 years experience")
+            for candidate in fresh_talent:
+                st.markdown(f"""
+                <div style="background: linear-gradient(45deg, #06ffa5, #4cc9f0); color: #000; padding: 0.5rem 1rem; border-radius: 20px; margin-bottom: 0.5rem; font-weight: 700;">
+                     {candidate['candidate']} - {candidate['experience']} years - {candidate['match_score']:.1%} match
+                </div>
+                """, unsafe_allow_html=True)
+        
+        elif current_filter == "all":
+            # Show top candidates summary
+            if selected:
+                st.markdown("###  NEURAL SELECTED CANDIDATES")
+                for candidate in selected[:5]:  # Show top 5
+                    st.markdown(f"""
+                    <div class="cyber-badge-selected">
+                        {candidate['candidate']} - {candidate['match_score']:.1%} compatibility - {candidate['decision']}
+                    </div>
+                    """, unsafe_allow_html=True)
+                    st.markdown("<br>", unsafe_allow_html=True)
+                if len(selected) > 5:
+                    st.info(f"+ {len(selected) - 5} more selected candidates. Click 'NEURAL SELECTED' filter to see all.")
+            
+            if shortlisted:
+                st.markdown("###  CYBER SHORTLISTED CANDIDATES")
+                for candidate in shortlisted[:5]:  # Show top 5
+                    st.markdown(f"""
+                    <div class="cyber-badge-shortlisted">
+                         {candidate['candidate']} - {candidate['match_score']:.1%} compatibility - {candidate['decision']}
+                    </div>
+                    """, unsafe_allow_html=True)
+                    st.markdown("<br>", unsafe_allow_html=True)
+                if len(shortlisted) > 5:
+                    st.info(f"+ {len(shortlisted) - 5} more shortlisted candidates. Click 'SHORTLISTED' filter to see all.")
+        
+        st.markdown("---")
+        
+        # HIDDEN GEMS - ML/DL Discovery Feature
+        st.markdown("### HIDDEN GEMS - AI-Discovered Talent")
+        st.markdown("""
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 1.5rem; border-radius: 15px; margin-bottom: 2rem;">
+            <h4 style="color: white; margin: 0 0 0.5rem 0;"> What are Hidden Gems?</h4>
+            <p style="color: #f0f0f0; margin: 0; font-size: 0.95rem;">
+                Candidates who might be <strong>overlooked by exact keyword matching</strong> but are discovered by our 
+                <strong>ML/DL semantic analysis</strong>. These talents have transferable skills, growth potential, 
+                or unique combinations that traditional ATS systems miss.
+            </p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        # Find hidden gems: candidates with semantic matches but lower exact matches
+        hidden_gems = []
+        for i, candidate in enumerate(results):
+            resume_text = resumes_list[i] if i < len(resumes_list) else ""
+            if resume_text:
+                resume_data = parse_resume_professional(resume_text)
+                
+                # Calculate exact match (simple keyword count)
+                exact_matches = sum(1 for skill in job_requirements['skills'] 
+                                  if any(skill in s.lower() for s in resume_data['skills']))
+                exact_match_pct = exact_matches / len(job_requirements['skills']) if job_requirements['skills'] else 0
+                
+                # If ML score is higher than exact match by 20%+, it's a hidden gem
+                ml_score = candidate['match_score']
+                if ml_score > exact_match_pct and (ml_score - exact_match_pct) >= 0.20 and ml_score >= 0.60:
+                    hidden_gems.append({
+                        'candidate': candidate,
+                        'exact_match': exact_match_pct,
+                        'ml_score': ml_score,
+                        'improvement': ml_score - exact_match_pct,
+                        'resume_data': resume_data
+                    })
+        
+        if hidden_gems:
+            st.success(f"**{len(hidden_gems)} Hidden Gems Discovered!** - Talents missed by traditional keyword matching")
+            
+            for gem in hidden_gems:
+                st.markdown(f"""
+                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); 
+                            padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; 
+                            border-left: 5px solid #FFD700;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h4 style="color: white; margin: 0;"> {gem['candidate']['candidate']}</h4>
+                            <p style="color: #fff; margin: 0.5rem 0 0 0; font-size: 0.9rem;">
+                                <strong>Exact Match:</strong> {gem['exact_match']:.1%} → 
+                                <strong>ML Discovery:</strong> {gem['ml_score']:.1%} 
+                                <span style="background: #FFD700; color: #000; padding: 0.2rem 0.5rem; border-radius: 5px; margin-left: 0.5rem;">
+                                    +{gem['improvement']:.1%} AI Boost
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
+                
+                # Show why they're a hidden gem
+                with st.expander(f"Why is {gem['candidate']['candidate']} a Hidden Gem?"):
+                    col1, col2 = st.columns(2)
+                    
+                    with col1:
+                        st.markdown("####  Comparison Analysis")
+                        st.metric("Traditional Keyword Match", f"{gem['exact_match']:.1%}", 
+                                 help="Based on exact keyword matching")
+                        st.metric("ML/DL Semantic Match", f"{gem['ml_score']:.1%}", 
+                                 delta=f"+{gem['improvement']:.1%}", 
+                                 help="Based on BERT + Sentence-BERT analysis")
+                    
+                    with col2:
+                        st.markdown("####  Discovery Insights")
+                        st.info("**Semantic Understanding:** Our Sentence-BERT model found skill similarities that exact matching missed")
+                        st.success("**Transferable Skills:** Candidate has related experience that applies to this role")
+                        st.warning("**Growth Potential:** Strong fundamentals with learning capacity")
+                    
+                    st.markdown("####  Why Traditional ATS Would Miss This Candidate")
+                    st.markdown(f"""
+                    - **Exact keyword match:** Only {gem['exact_match']:.0%} of required skills found verbatim
+                    - **ML semantic analysis:** Discovered {gem['ml_score']:.0%} compatibility through:
+                        - Synonym recognition (e.g., "ML" = "Machine Learning")
+                        - Related skill detection (e.g., "Python" implies "Programming")
+                        - Context understanding (e.g., "Led team" = "Leadership")
+                    - **AI Advantage:** +{gem['improvement']:.0%} better evaluation through deep learning
+                    """)
+        else:
+            st.info("💡 No hidden gems in this batch - all strong candidates were found by both exact and ML matching")
+        
+        st.markdown("---")
+        
+        # ANALYSIS TYPES FOR HR
+        st.markdown("###  COMPREHENSIVE ANALYSIS DASHBOARD")
+        st.markdown("Choose analysis type to gain different insights:")
+        
+        analysis_tabs = st.tabs([
+            "🎯 Match Analysis",
+            "💎 Hidden Gems vs Exact Match",
+            "📈 Skills Distribution",
+            "🏆 Experience Levels",
+            "🎓 Education Analysis",
+            "⚠️ Risk Assessment",
+            "💰 Salary Insights",
+            "🌈 Diversity Metrics"
+        ])
+        
+        with analysis_tabs[0]:  # Match Analysis
+            st.markdown("####  Candidate Match Distribution")
+            
+            # Create match score distribution
+            import plotly.graph_objects as go
+            
+            score_ranges = {
+                '80-100% (Excellent)': len([r for r in results if r['match_score'] >= 0.8]),
+                '65-79% (Good)': len([r for r in results if 0.65 <= r['match_score'] < 0.8]),
+                '45-64% (Fair)': len([r for r in results if 0.45 <= r['match_score'] < 0.65]),
+                '0-44% (Poor)': len([r for r in results if r['match_score'] < 0.45])
+            }
+            
+            fig = go.Figure(data=[go.Bar(
+                x=list(score_ranges.keys()),
+                y=list(score_ranges.values()),
+                marker_color=['#00f5d4', '#f72585', '#ffd60a', '#ff006e']
+            )])
+            fig.update_layout(
+                title="Match Score Distribution",
+                xaxis_title="Score Range",
+                yaxis_title="Number of Candidates",
+                height=400
+            )
+            st.plotly_chart(fig, use_container_width=True)
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                st.metric("Average Match Score", f"{np.mean([r['match_score'] for r in results]):.1%}")
+            with col2:
+                st.metric("Median Match Score", f"{np.median([r['match_score'] for r in results]):.1%}")
+        
+        with analysis_tabs[1]:  # Hidden Gems vs Exact
+            st.markdown("#### 💎 ML/DL Discovery vs Traditional Matching")
+            
+            st.markdown("""
+            **Key Differences:**
+            - **Exact Match:** Counts only exact keyword occurrences (e.g., "Python" must appear as "Python")
+            - **ML/DL Match:** Uses BERT + Sentence-BERT to understand:
+                - Synonyms: "ML" = "Machine Learning"
+                - Context: "Led 8-person team" = "Leadership"
+                - Related skills: "TensorFlow" implies "Deep Learning"
+            """)
+            
+            if hidden_gems:
+                st.success(f"**{len(hidden_gems)} candidates** would be missed by traditional ATS!")
+                
+                # Show comparison table
+                comparison_data = []
+                for gem in hidden_gems:
+                    comparison_data.append({
+                        'Candidate': gem['candidate']['candidate'],
+                        'Exact Match': f"{gem['exact_match']:.1%}",
+                        'ML/DL Match': f"{gem['ml_score']:.1%}",
+                        'AI Advantage': f"+{gem['improvement']:.1%}",
+                        'Status': '💎 Hidden Gem'
+                    })
+                
+                st.dataframe(comparison_data, width="stretch")
+            else:
+                st.info("All candidates were found by both methods - no hidden gems in this batch")
+        
+        with analysis_tabs[2]:  # Skills Distribution
+            st.markdown("#### 📈 Skills Landscape Analysis")
+            
+            all_skills = []
+            for i, candidate in enumerate(results):
+                resume_text = resumes_list[i] if i < len(resumes_list) else ""
+                if resume_text:
+                    resume_data = parse_resume_professional(resume_text)
+                    all_skills.extend(resume_data['skills'])
+            
+            from collections import Counter
+            skill_counts = Counter(all_skills)
+            top_skills = skill_counts.most_common(10)
+            
+            if top_skills:
+                fig = go.Figure(data=[go.Bar(
+                    x=[skill for skill, count in top_skills],
+                    y=[count for skill, count in top_skills],
+                    marker_color='#00f5d4'
+                )])
+                fig.update_layout(
+                    title="Top 10 Skills Across All Candidates",
+                    xaxis_title="Skill",
+                    yaxis_title="Frequency",
+                    height=400
+                )
+                st.plotly_chart(fig, use_container_width=True)
+        
+        with analysis_tabs[3]:  # Experience Levels
+            st.markdown("#### 🏆 Experience Distribution")
+            
+            exp_ranges = {
+                '0-2 years (Junior)': len([r for r in results if r['experience'] <= 2]),
+                '3-5 years (Mid-level)': len([r for r in results if 3 <= r['experience'] <= 5]),
+                '6-10 years (Senior)': len([r for r in results if 6 <= r['experience'] <= 10]),
+                '10+ years (Expert)': len([r for r in results if r['experience'] > 10])
+            }
+            
+            fig = go.Figure(data=[go.Pie(
+                labels=list(exp_ranges.keys()),
+                values=list(exp_ranges.values()),
+                hole=0.4
+            )])
+            fig.update_layout(title="Experience Level Distribution", height=400)
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with analysis_tabs[4]:  # Education
+            st.markdown("#### 🎓 Education Qualifications")
+            
+            education_levels = []
+            for i, candidate in enumerate(results):
+                resume_text = resumes_list[i] if i < len(resumes_list) else ""
+                if resume_text:
+                    resume_data = parse_resume_professional(resume_text)
+                    education_levels.append(resume_data['highest_education'])
+            
+            from collections import Counter
+            edu_counts = Counter(education_levels)
+            
+            fig = go.Figure(data=[go.Bar(
+                x=list(edu_counts.keys()),
+                y=list(edu_counts.values()),
+                marker_color='#f72585'
+            )])
+            fig.update_layout(
+                title="Education Level Distribution",
+                xaxis_title="Degree",
+                yaxis_title="Count",
+                height=400
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with analysis_tabs[5]:  # Risk Assessment
+            st.markdown("#### ⚠️ Hiring Risk Analysis")
+            
+            if ML_MODELS_AVAILABLE:
+                try:
+                    from ml_models import attrition_predictor
+                    
+                    risk_summary = {'low': 0, 'medium': 0, 'high': 0}
+                    for i, candidate in enumerate(results):
+                        resume_text = resumes_list[i] if i < len(resumes_list) else ""
+                        if resume_text:
+                            resume_data = parse_resume_professional(resume_text)
+                            risk = attrition_predictor.predict_attrition_risk(
+                                resume_data, job_requirements, candidate['match_score']
+                            )
+                            risk_summary[risk['risk_level']] += 1
+                    
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.metric("🟢 Low Risk", risk_summary['low'], help="Likely to stay 2+ years")
+                    with col2:
+                        st.metric("🟡 Medium Risk", risk_summary['medium'], help="Monitor engagement")
+                    with col3:
+                        st.metric("🔴 High Risk", risk_summary['high'], help="May leave within 1 year")
+                except:
+                    st.info("Install ML models for risk prediction: pip install -r requirements_ml.txt")
+            else:
+                st.info("ML models not available. Install with: pip install -r requirements_ml.txt")
+        
+        with analysis_tabs[6]:  # Salary
+            st.markdown("####  Compensation Analysis")
+            
+            salary_data = []
+            for i, candidate in enumerate(results):
+                resume_text = resumes_list[i] if i < len(resumes_list) else ""
+                if resume_text:
+                    resume_data = parse_resume_professional(resume_text)
+                    salary_range = predict_salary_range(resume_data)
+                    salary_data.append({
+                        'Candidate': candidate['candidate'],
+                        'Lower Range': f"${salary_range['lower_range']:,}",
+                        'Market Avg': f"${salary_range['market_average']:,}",
+                        'Upper Range': f"${salary_range['upper_range']:,}",
+                        'Recommended': f"${salary_range['recommended_offer']:,}"
+                    })
+            
+            if salary_data:
+                st.dataframe(salary_data, width="stretch")
+                
+                avg_recommended = np.mean([int(s['Recommended'].replace('$', '').replace(',', '')) for s in salary_data])
+                st.metric("Average Recommended Offer", f"${avg_recommended:,.0f}")
+        
+        with analysis_tabs[7]:  # Diversity
+            st.markdown("####  Diversity & Inclusion Metrics")
+            
+            if ML_MODELS_AVAILABLE:
+                try:
+                    from ml_models import diversity_analyzer
+                    
+                    candidates_data = []
+                    for i, candidate in enumerate(results):
+                        resume_text = resumes_list[i] if i < len(resumes_list) else ""
+                        if resume_text:
+                            resume_data = parse_resume_professional(resume_text)
+                            candidates_data.append(resume_data)
+                    
+                    diversity_metrics = diversity_analyzer.analyze_diversity(candidates_data)
+                    
+                    col1, col2, col3, col4 = st.columns(4)
+                    with col1:
+                        st.metric("Education Diversity", f"{diversity_metrics['education_diversity']:.1%}")
+                    with col2:
+                        st.metric("Experience Diversity", f"{diversity_metrics['experience_diversity']:.1%}")
+                    with col3:
+                        st.metric("Skill Diversity", f"{diversity_metrics['skill_diversity']:.1%}")
+                    with col4:
+                        st.metric("Overall Diversity", f"{diversity_metrics['overall_diversity_score']:.1%}")
+                    
+                    if diversity_metrics['overall_diversity_score'] >= 0.7:
+                        st.success(" Excellent diversity - Well-balanced candidate pool")
+                    elif diversity_metrics['overall_diversity_score'] >= 0.5:
+                        st.warning(" Moderate diversity - Consider broadening search")
+                    else:
+                        st.error(" Low diversity - Homogeneous candidate pool")
+                except:
+                    st.info("Install ML models for diversity analysis")
+            else:
+                st.info("ML models not available")
+        
         st.markdown("---")
         
         # DETAILED CANDIDATE ANALYSIS WITH REASONS
-        st.markdown("### 📋 Detailed Candidate Analysis")
+        st.markdown("###  Detailed Candidate Analysis")
         st.markdown("Expand any candidate to view comprehensive analysis including selection reasons, skills gap, salary, interview questions, and communication templates.")
         
         for i, candidate in enumerate(results, 1):
@@ -1255,7 +1767,7 @@ Neural Profile 3 data matrix..."""
                 resume_data = parse_resume_professional(candidate_text)
                 result = calculate_professional_match_score(resume_data, job_requirements)
                 
-                with st.expander(f"📊 Candidate #{i}: {candidate['candidate']} - {candidate['match_score']:.1%} Match - {candidate['status']}"):
+                with st.expander(f" Candidate #{i}: {candidate['candidate']} - {candidate['match_score']:.1%} Match - {candidate['status']}"):
                     
                     # Quick Actions Row
                     col1, col2, col3 = st.columns(3)
@@ -1281,7 +1793,7 @@ Neural Profile 3 data matrix..."""
 **Missing:** {', '.join(analyze_skills_gap(resume_data, job_requirements)['missing'])}
 
 ## Salary Recommendation
-**Range:** ${predict_salary_range(resume_data)['lower']:,} - ${predict_salary_range(resume_data)['upper']:,}
+**Range:** ${predict_salary_range(resume_data)['lower_range']:,} - ${predict_salary_range(resume_data)['upper_range']:,}
 **Recommended Offer:** ${predict_salary_range(resume_data)['recommended_offer']:,}
 """
                         st.download_button(
@@ -1302,7 +1814,7 @@ Neural Profile 3 data matrix..."""
                             result['reasons_selected'] if result['reasons_selected'] else ["Professional background"]
                         )
                         st.download_button(
-                            label="📧 Download Email",
+                            label=" Download Email",
                             data=email,
                             file_name=f"email_{candidate['candidate'].replace(' ', '_')}.txt",
                             mime="text/plain",
@@ -1312,7 +1824,7 @@ Neural Profile 3 data matrix..."""
                     with col3:
                         # Copy resume text for single analysis
                         st.download_button(
-                            label="📋 Copy Resume Text",
+                            label=" Copy Resume Text",
                             data=candidate_text,
                             file_name=f"resume_{candidate['candidate'].replace(' ', '_')}.txt",
                             mime="text/plain",
@@ -1342,7 +1854,7 @@ Neural Profile 3 data matrix..."""
                     col1, col2 = st.columns(2)
                     
                     with col1:
-                        st.markdown("#### ✅ Reasons for Selection")
+                        st.markdown("####  Reasons for Selection")
                         if result['reasons_selected']:
                             for reason in result['reasons_selected']:
                                 st.success(reason)
@@ -1350,7 +1862,7 @@ Neural Profile 3 data matrix..."""
                             st.info("No strong positive factors identified")
                     
                     with col2:
-                        st.markdown("#### ⚠️ Reasons for Rejection")
+                        st.markdown("####  Reasons for Rejection")
                         if result['reasons_rejected']:
                             for reason in result['reasons_rejected']:
                                 st.warning(reason)
@@ -1375,7 +1887,7 @@ Neural Profile 3 data matrix..."""
                         if skills_gap['missing']:
                             for skill in skills_gap['missing']:
                                 st.error(f"✗ {skill.title()}")
-                            st.info(f"📚 Learning time: {skills_gap['learning_time_weeks']} weeks")
+                            st.info(f"Learning time: {skills_gap['learning_time_weeks']} weeks")
                         else:
                             st.success("All required skills present!")
                     
@@ -1383,7 +1895,7 @@ Neural Profile 3 data matrix..."""
                     st.markdown("#### Risk Assessment")
                     red_flags = detect_red_flags(candidate_text, resume_data)
                     if red_flags['clean']:
-                        st.success("✅ Clean profile - No red flags detected")
+                        st.success(" Clean profile - No red flags detected")
                     else:
                         if red_flags['red_flags']:
                             for flag in red_flags['red_flags']:
@@ -1397,11 +1909,11 @@ Neural Profile 3 data matrix..."""
                     salary_pred = predict_salary_range(resume_data)
                     col1, col2, col3, col4 = st.columns(4)
                     with col1:
-                        st.metric("Lower Range", f"${salary_pred['lower']:,}")
+                        st.metric("Lower Range", f"${salary_pred['lower_range']:,}")
                     with col2:
                         st.metric("Market Avg", f"${salary_pred['market_average']:,}")
                     with col3:
-                        st.metric("Upper Range", f"${salary_pred['upper']:,}")
+                        st.metric("Upper Range", f"${salary_pred['upper_range']:,}")
                     with col4:
                         st.metric("Recommended", f"${salary_pred['recommended_offer']:,}")
                     
@@ -1414,7 +1926,7 @@ Neural Profile 3 data matrix..."""
         st.markdown("---")
         
         # Comparative Table with Reasons
-        st.markdown("### 📊 Comparative Analysis Table")
+        st.markdown("###  Comparative Analysis Table")
         
         # Build enhanced dataframe with reasons
         enhanced_results = []
@@ -1444,12 +1956,12 @@ Neural Profile 3 data matrix..."""
         
         if enhanced_results:
             df_enhanced = pd.DataFrame(enhanced_results)
-            st.dataframe(df_enhanced, use_container_width=True)
+            st.dataframe(df_enhanced, width="stretch")
         
         st.markdown("---")
         
         # Full results table (legacy)
-        st.markdown("### 📋 Summary Table")
+        st.markdown("### Summary Table")
         df = pd.DataFrame(results)
         df['Rank'] = range(1, len(df) + 1)
         df['Compatibility'] = df['match_score'].apply(lambda x: f"{x:.1%}")
@@ -1457,12 +1969,12 @@ Neural Profile 3 data matrix..."""
         display_df = df[['Rank', 'candidate', 'experience', 'skills_count', 'status', 'Compatibility']]
         display_df.columns = ['Rank', 'Neural ID', 'Experience', 'Skills', 'Status', 'Compatibility']
         
-        st.dataframe(display_df, use_container_width=True)
+        st.dataframe(display_df, width="stretch")
         
         # Download
         csv = df.to_csv(index=False)
         st.download_button(
-            label="📥 EXPORT NEURAL DATA",
+            label=" EXPORT NEURAL DATA",
             data=csv,
             file_name=f"neural_analysis_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
             mime="text/csv"
@@ -1470,12 +1982,22 @@ Neural Profile 3 data matrix..."""
 
 def main():
     """Main application"""
+    
+    # Navigation hint at top
+    st.markdown("""
+    <div style="background: linear-gradient(90deg, #00f5d4, #f72585); padding: 0.5rem; text-align: center; border-radius: 10px; margin-bottom: 1rem;">
+        <p style="margin: 0; color: #000; font-weight: 700; font-size: 0.9rem;">
+             USE SIDEBAR TO NAVIGATE: Home | Single Analysis | Bulk Processing
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    
     st.markdown('<h1 class="cyber-header">NEUROMATCH AI</h1>', unsafe_allow_html=True)
     st.markdown('<p class="cyber-subtitle">AI-Powered Hiring Intelligence Platform</p>', unsafe_allow_html=True)
     
     # Sidebar navigation with better visibility
     with st.sidebar:
-        st.markdown("## 🚀 Navigation")
+        st.markdown("##  Navigation")
         st.markdown("---")
         
         page = st.radio(

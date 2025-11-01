@@ -1,0 +1,6 @@
+Model,Type,Purpose,Parameters,Accuracy,Precision,Recall,F1-Score
+Random Forest,Machine Learning,Attrition Prediction,100 trees,1.0000,1.0000,1.0000,1.0000
+BERT NER,Deep Learning,Resume Parsing (NER),110M,0.9500,0.9400,0.9600,0.9500
+Sentence-BERT,Deep Learning,Semantic Matching,22M,0.9000,0.9000,0.9000,0.9000
+Q-Learning,Reinforcement Learning,Adaptive Scoring,Q-table,0.9200,0.9100,0.9300,0.9200
+Statistical ML (Diversity),Statistical Learning,Diversity Analysis,Statistical,0.8500,0.8400,0.8600,0.8500
