@@ -1,0 +1,284 @@
+# 20 COMPLETE TEST RESUMES FOR VALIDATION
+# Use these to test Hidden Gems, ML models, and skills analysis
+
+===== RESUME 1: DATA SCIENTIST =====
+Dr. Sarah Chen
+Senior Data Scientist at Google
+Email: sarah.chen@gmail.com
+Phone: +1-555-0123
+
+Experience: 8 years in data science and machine learning
+Skills: Python, R, TensorFlow, PyTorch, SQL, Pandas, NumPy, Scikit-learn, Tableau, AWS, Docker
+Education: PhD in Computer Science from Stanford University
+Location: San Francisco, CA
+
+Led machine learning initiatives for Google Search, improving relevance by 15%. Published 12 research papers in top-tier ML conferences. Mentored 6 junior data scientists. Expert in deep learning, NLP, and computer vision. Built production ML pipelines serving 1B+ users daily.
+
+===== RESUME 2: SOFTWARE ENGINEER =====
+Michael Rodriguez
+Full Stack Developer
+Email: m.rodriguez@email.com
+Phone: +1-555-0124
+
+Experience: 5 years in web development
+Skills: JavaScript, React, Node.js, Python, MongoDB, PostgreSQL, AWS, Docker, Git, HTML, CSS, TypeScript
+Education: Bachelor's in Computer Science from UC Berkeley
+Location: Austin, TX
+
+Developed scalable web applications for fintech startup. Built microservices architecture handling 100K+ daily transactions. Led frontend team of 4 developers. Expert in React ecosystem and modern JavaScript frameworks.
+
+===== RESUME 3: HIDDEN GEM - STATISTICIAN =====
+Dr. Emily Watson
+Research Statistician at University of Chicago
+Email: emily.watson@uchicago.edu
+Phone: +1-555-0125
+
+Experience: 6 years in statistical research and analysis
+Skills: R, SAS, SPSS, Statistics, Mathematical Modeling, Data Analysis, Research, Experimental Design, Hypothesis Testing
+Education: PhD in Statistics from MIT
+Location: Chicago, IL
+
+Led statistical analysis for 20+ clinical trials. Published 15 papers in biostatistics journals. Expert in advanced statistical methods, survival analysis, and Bayesian inference. Collaborated with medical researchers on drug efficacy studies.
+
+===== RESUME 4: MARKETING MANAGER =====
+Jessica Park
+Digital Marketing Manager at Adobe
+Email: jessica.park@adobe.com
+Phone: +1-555-0126
+
+Experience: 4 years in digital marketing
+Skills: SEO, Google Analytics, Social Media Marketing, Content Marketing, PPC, Email Marketing, A/B Testing, Tableau
+Education: MBA from Wharton School
+Location: Seattle, WA
+
+Increased organic traffic by 200% through SEO optimization. Managed $2M annual advertising budget. Led cross-functional campaigns resulting in 30% revenue growth. Expert in marketing automation and customer acquisition.
+
+===== RESUME 5: DEVOPS ENGINEER =====
+David Kim
+DevOps Engineer at Netflix
+Email: david.kim@netflix.com
+Phone: +1-555-0127
+
+Experience: 6 years in cloud infrastructure
+Skills: AWS, Kubernetes, Docker, Terraform, Jenkins, CI/CD, Python, Bash, Monitoring, Ansible
+Education: Bachelor's in Computer Engineering
+Location: Los Gatos, CA
+
+Architected cloud infrastructure supporting 200M+ Netflix users. Reduced deployment time by 80% through automation. Built monitoring systems preventing 99.9% uptime. Expert in container orchestration and infrastructure as code.
+
+===== RESUME 6: HIDDEN GEM - PHYSICIST =====
+Dr. Robert Chang
+Research Physicist at CERN
+Email: robert.chang@cern.ch
+Phone: +41-22-555-0128
+
+Experience: 7 years in computational physics
+Skills: C++, MATLAB, Fortran, Mathematical Modeling, Simulation, Data Analysis, High-Performance Computing, Linux
+Education: PhD in Physics from Caltech
+Location: Geneva, Switzerland
+
+Developed simulation algorithms for particle physics experiments. Analyzed petabytes of experimental data. Published 25 papers in Nature and Physical Review. Expert in numerical methods and parallel computing.
+
+===== RESUME 7: UX DESIGNER =====
+Amanda Foster
+Senior UX Designer at Airbnb
+Email: amanda.foster@airbnb.com
+Phone: +1-555-0129
+
+Experience: 5 years in user experience design
+Skills: Figma, Sketch, Adobe Creative Suite, Prototyping, User Research, Wireframing, HTML, CSS, JavaScript
+Education: Master's in Human-Computer Interaction
+Location: San Francisco, CA
+
+Redesigned Airbnb booking flow, increasing conversions by 25%. Conducted user research with 500+ participants. Led design system implementation across 15 product teams. Expert in accessibility and mobile-first design.
+
+===== RESUME 8: PRODUCT MANAGER =====
+James Wilson
+Senior Product Manager at Microsoft
+Email: james.wilson@microsoft.com
+Phone: +1-555-0130
+
+Experience: 7 years in product management
+Skills: Product Strategy, Agile, Scrum, SQL, Analytics, A/B Testing, Roadmapping, Stakeholder Management
+Education: MBA from Stanford Graduate School of Business
+Location: Redmond, WA
+
+Launched 3 successful products generating $50M+ revenue. Managed cross-functional teams of 20+ engineers and designers. Expert in data-driven product decisions and go-to-market strategy.
+
+===== RESUME 9: HIDDEN GEM - BIOINFORMATICIAN =====
+Dr. Lisa Thompson
+Bioinformatics Researcher at NIH
+Email: lisa.thompson@nih.gov
+Phone: +1-555-0131
+
+Experience: 5 years in computational biology
+Skills: Python, R, Bioconductor, Genomics, Sequence Analysis, Machine Learning, Statistics, Linux, Perl
+Education: PhD in Bioinformatics from Johns Hopkins
+Location: Bethesda, MD
+
+Analyzed genomic data for cancer research. Developed algorithms for DNA sequence alignment. Published 18 papers in bioinformatics journals. Expert in next-generation sequencing and personalized medicine.
+
+===== RESUME 10: CYBERSECURITY ANALYST =====
+Mark Johnson
+Cybersecurity Analyst at Palo Alto Networks
+Email: mark.johnson@paloaltonetworks.com
+Phone: +1-555-0132
+
+Experience: 4 years in cybersecurity
+Skills: Network Security, Penetration Testing, SIEM, Incident Response, Python, Bash, Wireshark, Nmap
+Education: Bachelor's in Cybersecurity
+Location: Santa Clara, CA
+
+Detected and mitigated 100+ security threats. Conducted penetration testing for Fortune 500 clients. Built automated threat detection systems. Expert in malware analysis and digital forensics.
+
+===== RESUME 11: HIDDEN GEM - ECONOMIST =====
+Dr. Rachel Green
+Senior Economist at Federal Reserve
+Email: rachel.green@federalreserve.gov
+Phone: +1-555-0133
+
+Experience: 8 years in economic research
+Skills: Econometrics, Statistical Analysis, R, Stata, MATLAB, Economic Modeling, Forecasting, Data Visualization
+Education: PhD in Economics from Harvard University
+Location: Washington, DC
+
+Developed macroeconomic forecasting models. Analyzed monetary policy impacts on financial markets. Published 20 papers in top economics journals. Expert in time series analysis and causal inference.
+
+===== RESUME 12: MOBILE DEVELOPER =====
+Kevin Lee
+iOS Developer at Uber
+Email: kevin.lee@uber.com
+Phone: +1-555-0134
+
+Experience: 4 years in mobile development
+Skills: Swift, Objective-C, iOS SDK, Xcode, React Native, Git, RESTful APIs, Core Data
+Education: Bachelor's in Computer Science
+Location: San Francisco, CA
+
+Developed Uber's driver app used by 5M+ drivers globally. Optimized app performance reducing crash rate by 60%. Led iOS team implementing real-time location tracking. Expert in mobile architecture patterns.
+
+===== RESUME 13: BUSINESS ANALYST =====
+Jennifer Martinez
+Business Analyst at McKinsey & Company
+Email: jennifer.martinez@mckinsey.com
+Phone: +1-555-0135
+
+Experience: 3 years in business consulting
+Skills: Excel, PowerPoint, SQL, Tableau, Business Intelligence, Process Improvement, Financial Modeling
+Education: MBA from Harvard Business School
+Location: New York, NY
+
+Led digital transformation projects for Fortune 100 clients. Identified $20M+ cost savings through process optimization. Expert in strategic planning and operational excellence.
+
+===== RESUME 14: HIDDEN GEM - MATHEMATICIAN =====
+Dr. Andrew Miller
+Research Mathematician at IBM Research
+Email: andrew.miller@ibm.com
+Phone: +1-555-0136
+
+Experience: 6 years in applied mathematics
+Skills: Mathematical Optimization, Linear Algebra, Calculus, MATLAB, Python, Algorithm Design, Numerical Analysis
+Education: PhD in Applied Mathematics from MIT
+Location: Yorktown Heights, NY
+
+Developed optimization algorithms for supply chain management. Solved complex mathematical problems for AI systems. Published 15 papers in mathematics journals. Expert in discrete mathematics and graph theory.
+
+===== RESUME 15: QUALITY ASSURANCE ENGINEER =====
+Sarah Davis
+QA Engineer at Tesla
+Email: sarah.davis@tesla.com
+Phone: +1-555-0137
+
+Experience: 3 years in software testing
+Skills: Test Automation, Selenium, Python, Java, API Testing, Performance Testing, Agile, JIRA
+Education: Bachelor's in Computer Science
+Location: Palo Alto, CA
+
+Automated testing for Tesla's autopilot software. Reduced testing time by 70% through automation frameworks. Found and reported 500+ critical bugs. Expert in test-driven development and continuous integration.
+
+===== RESUME 16: HIDDEN GEM - OPERATIONS RESEARCHER =====
+Dr. Thomas Brown
+Operations Research Analyst at Amazon
+Email: thomas.brown@amazon.com
+Phone: +1-555-0138
+
+Experience: 5 years in operations research
+Skills: Linear Programming, Optimization, Simulation, Python, R, Operations Research, Supply Chain, Logistics
+Education: PhD in Operations Research from Stanford
+Location: Seattle, WA
+
+Optimized Amazon's delivery network reducing costs by $100M annually. Developed algorithms for warehouse automation. Expert in mathematical modeling and decision analysis.
+
+===== RESUME 17: FRONTEND DEVELOPER =====
+Alex Chen
+Frontend Developer at Facebook
+Email: alex.chen@facebook.com
+Phone: +1-555-0139
+
+Experience: 4 years in frontend development
+Skills: React, JavaScript, TypeScript, HTML, CSS, Redux, Webpack, GraphQL, Jest, Git
+Education: Bachelor's in Web Development
+Location: Menlo Park, CA
+
+Built Facebook's news feed frontend serving 3B+ users. Improved page load speed by 40% through optimization. Led accessibility improvements achieving WCAG compliance. Expert in modern JavaScript frameworks.
+
+===== RESUME 18: HIDDEN GEM - NEUROSCIENTIST =====
+Dr. Maria Gonzalez
+Computational Neuroscientist at Stanford
+Email: maria.gonzalez@stanford.edu
+Phone: +1-555-0140
+
+Experience: 7 years in computational neuroscience
+Skills: MATLAB, Python, Signal Processing, Machine Learning, Neuroimaging, Statistics, Data Analysis, Research
+Education: PhD in Neuroscience from Caltech
+Location: Stanford, CA
+
+Analyzed brain imaging data using machine learning. Developed algorithms for neural signal processing. Published 22 papers in neuroscience journals. Expert in computational modeling of brain networks.
+
+===== RESUME 19: BACKEND DEVELOPER =====
+Ryan Taylor
+Backend Developer at Spotify
+Email: ryan.taylor@spotify.com
+Phone: +1-555-0141
+
+Experience: 5 years in backend development
+Skills: Java, Spring Boot, Microservices, PostgreSQL, Redis, Kafka, Docker, Kubernetes, AWS
+Education: Master's in Computer Science
+Location: Stockholm, Sweden
+
+Built Spotify's music recommendation engine serving 400M+ users. Designed scalable microservices architecture. Optimized database queries improving response time by 50%. Expert in distributed systems and API design.
+
+===== RESUME 20: HIDDEN GEM - CHEMIST =====
+Dr. Patricia White
+Computational Chemist at Pfizer
+Email: patricia.white@pfizer.com
+Phone: +1-555-0142
+
+Experience: 6 years in computational chemistry
+Skills: Molecular Modeling, Python, R, Chemical Simulation, Drug Discovery, Machine Learning, Data Analysis
+Education: PhD in Chemistry from Harvard
+Location: Cambridge, MA
+
+Developed ML models for drug discovery reducing development time by 30%. Analyzed molecular interactions using computational methods. Published 18 papers in chemistry journals. Expert in cheminformatics and pharmaceutical research.
+
+===== JOB REQUIREMENTS FOR TESTING =====
+
+DATA SCIENTIST ROLE:
+Required Skills: python, machine learning, sql
+Min Experience: 3 years
+Education: bachelor
+
+SOFTWARE ENGINEER ROLE:
+Required Skills: javascript, react, node
+Min Experience: 2 years
+Education: bachelor
+
+DEVOPS ENGINEER ROLE:
+Required Skills: aws, docker, kubernetes
+Min Experience: 4 years
+Education: bachelor
+
+MARKETING MANAGER ROLE:
+Required Skills: seo, google analytics, social media
+Min Experience: 3 years
+Education: bachelor

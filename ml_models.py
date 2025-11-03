@@ -152,6 +152,60 @@ class ReinforcementLearningScorer:
             'matches': matches,
             'weights': self.weights
         }
+    
+    def get_recommendation(self, resume_data, job_requirements):
+        """
+        Get Q-Learning recommendation for candidate
+        
+        Args:
+            resume_data: parsed resume data
+            job_requirements: job requirements dict
+        
+        Returns:
+            dict: {
+                'recommendation': str,
+                'confidence': float,
+                'reasoning': str
+            }
+        """
+        # Calculate component scores using current weights
+        scores = {
+            'technical_skills': min(len(resume_data.get('skills', [])) / max(len(job_requirements.get('skills', [])), 1), 1.0),
+            'experience': min(resume_data.get('experience', 0) / max(job_requirements.get('min_experience', 1), 1), 1.0),
+            'education': 0.8 if resume_data.get('highest_education', 'bachelor') in ['bachelor', 'master', 'phd'] else 0.5,
+            'leadership': 0.8 if resume_data.get('leadership_indicators', []) else 0.3,
+            'achievements': 0.9 if resume_data.get('achievements', []) else 0.4,
+            'cultural_fit': 0.7
+        }
+        
+        # Calculate weighted score using learned weights
+        final_score = sum(scores[component] * self.weights[component] for component in scores)
+        
+        # Generate recommendation
+        if final_score >= 0.8:
+            recommendation = "HIRE"
+            confidence = final_score
+            reasoning = "Strong candidate across all dimensions"
+        elif final_score >= 0.65:
+            recommendation = "INTERVIEW"
+            confidence = final_score
+            reasoning = "Good candidate, worth interviewing"
+        elif final_score >= 0.45:
+            recommendation = "MAYBE"
+            confidence = final_score * 0.8
+            reasoning = "Borderline candidate, consider carefully"
+        else:
+            recommendation = "REJECT"
+            confidence = 1.0 - final_score
+            reasoning = "Below threshold for this role"
+        
+        return {
+            'recommendation': recommendation,
+            'confidence': float(confidence),
+            'reasoning': reasoning,
+            'component_scores': scores,
+            'final_score': float(final_score)
+        }
 
 
 # ============================================================================
@@ -337,6 +391,43 @@ class SemanticSkillMatcher:
             'missing': missing,
             'similarity_scores': {}
         }
+    
+    def calculate_similarity(self, resume_text, job_description):
+        """
+        Calculate semantic similarity between resume and job description
+        
+        Args:
+            resume_text: full resume text
+            job_description: job requirements text
+        
+        Returns:
+            float: similarity score (0-1)
+        """
+        if not self.model_loaded:
+            # Fallback to keyword matching
+            resume_words = set(resume_text.lower().split())
+            job_words = set(job_description.lower().split())
+            intersection = len(resume_words.intersection(job_words))
+            union = len(resume_words.union(job_words))
+            return intersection / union if union > 0 else 0.0
+        
+        try:
+            # Encode both texts
+            resume_embedding = self.model.encode([resume_text])
+            job_embedding = self.model.encode([job_description])
+            
+            # Calculate cosine similarity
+            similarity = cosine_similarity(resume_embedding, job_embedding)[0][0]
+            return float(similarity)
+        
+        except Exception as e:
+            print(f"[WARNING] Similarity calculation failed: {e}")
+            # Fallback
+            resume_words = set(resume_text.lower().split())
+            job_words = set(job_description.lower().split())
+            intersection = len(resume_words.intersection(job_words))
+            union = len(resume_words.union(job_words))
+            return intersection / union if union > 0 else 0.0
 
 
 # ============================================================================
@@ -499,13 +590,44 @@ class AttritionPredictor:
         if os.path.exists(self.model_file):
             try:
                 with open(self.model_file, 'rb') as f:
-                    data = pickle.dump(f)
+                    data = pickle.load(f)  # Fixed: was pickle.dump
                     self.model = data['model']
                     self.scaler = data['scaler']
                     self.is_trained = data['is_trained']
                 print(f"[OK] Loaded attrition model from {self.model_file}")
             except Exception as e:
                 print(f"[WARNING] Could not load attrition model: {e}")
+    
+    def predict_score(self, features):
+        """
+        Predict ML score for candidate
+        
+        Args:
+            features: list of numerical features
+        
+        Returns:
+            float: ML prediction score (0-1)
+        """
+        try:
+            # Convert to numpy array
+            features_array = np.array(features).reshape(1, -1)
+            
+            if self.is_trained:
+                # Use trained model
+                features_scaled = self.scaler.transform(features_array)
+                score = self.model.predict_proba(features_scaled)[0][1]
+            else:
+                # Use heuristic scoring
+                # Normalize features and calculate weighted average
+                normalized_features = np.clip(features_array[0], 0, 1)
+                score = np.mean(normalized_features)
+            
+            return float(score)
+        
+        except Exception as e:
+            print(f"[WARNING] ML score prediction failed: {e}")
+            # Fallback to simple average
+            return float(np.mean(np.clip(features, 0, 1)))
 
 
 # ============================================================================
